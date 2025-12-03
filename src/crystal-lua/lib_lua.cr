@@ -1,8 +1,7 @@
 {% if flag?(:win32) %}
-  @[Link("#{__DIR__}\\..\\..\\ext\\build\\lua-5.4.4\\Release\\lua_static")]
-{% else %}
-  @[Link("lua")]
+  @[Link(dll: "lua.dll")]
 {% end %}
+@[Link("lua")]
 lib LibLua
   type State = Void*
 
