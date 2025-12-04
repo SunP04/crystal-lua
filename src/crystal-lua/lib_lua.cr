@@ -1,5 +1,5 @@
 {% if flag?(:win32) %}
-  @[Link(dll: "lua.dll")]
+  @[Link(dll: "lua54.dll")]
 {% end %}
 @[Link("lua")]
 lib LibLua
