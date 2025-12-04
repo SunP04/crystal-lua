@@ -91,13 +91,11 @@ module Lua
     end
 
     def call(num_args : Int32, num_results : Int32) : Nil
-      code = LibLua.callk(@state, num_args, num_results, 0, nil)
-      raise Error.from_status(code, pop!.as_s) unless code == 0
+      LibLua.callk(@state, num_args, num_results, 0, nil)
     end
 
     def call(num_args : Int32, num_results : Int32, context : LibLua::KContext, fn : LibLua::KFunction) : Nil
-      code = LibLua.callk(@state, num_args, num_results, context, fn)
-      raise Error.from_status(code, pop!.as_s) unless code == 0
+      LibLua.callk(@state, num_args, num_results, context, fn)
     end
 
     def next(index : Int32) : Bool
